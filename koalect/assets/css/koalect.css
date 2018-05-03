@@ -1,0 +1,213 @@
+.error {
+
+    color: #E53935;
+}
+
+.error .badge-secondary {
+    background-color: #E53935;
+}
+
+html,
+body {
+
+    height: 100%;
+}
+
+header {
+
+    background: #f9f9f9;
+    border-right: 1px solid #d9d9d9;
+    max-width: 60px;
+}
+
+svg {
+
+    display: block;
+    margin: 20px auto;
+    opacity: .7;
+    transition: all ease-out .5s;
+
+    width: 100%;
+}
+
+svg:hover {
+
+    opacity: 1;
+    transition: all ease-out .5s;
+}
+
+.koalect-color-text {
+
+    color: #49bf8f;
+}
+
+section {
+
+    margin: 100px 30px;
+}
+
+.exercice-info {
+
+    position: absolute;
+    right: 100%;
+    font-weight: bolder;
+    margin-right: 10px;
+}
+
+.exercice-info h2 {
+
+    opacity: .08;
+    font-weight: bold;
+}
+
+.exercice-info img {
+
+    width: 50px;
+    height: auto;
+    filter: grayscale(100%);
+    display: block;
+    margin: 0 auto;
+    opacity: .8;
+    transition: all ease-out .5s;
+}
+
+.exercice-info:hover img {
+
+    filter: grayscale(0%);
+    transition: all ease-out .5s;
+}
+
+small {
+    font-size: .8rem;
+    font-style: italic;
+
+}
+
+blockquote {
+
+    font-weight: 100;
+    font-style: italic;
+}
+
+pre {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+form {
+
+    margin: 30px 0;
+}
+
+/* START */
+
+/* ANIMATION ANGULAR ng-animate */
+.list-group-item {
+
+    transition: all ease .75s;
+}
+
+.list-group-item.ng-enter {
+
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all ease .75s;
+}
+
+.list-group-item.ng-enter-active {
+
+    opacity: 1;
+    transform: translateX(0px);
+    transition: all ease .75s;
+}
+
+.list-group-item.ng-leave {
+
+    opacity: 1;
+    transform: translateX(0px);
+    transition: all ease .75s;
+}
+
+.list-group-item.ng-leave-active {
+
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all ease .75s;
+}
+.list-group-item p.complete-add {
+    
+    opacity: .7;
+    font-style: italic;
+    transition: all ease 1s;
+}
+.list-group-item p.complete {
+
+    opacity: .7;
+    font-style: italic;
+}
+
+.list-group-item p .done {
+
+    opacity: .7;
+    position: absolute;
+    top: 50%;
+    left: -1%;
+    width: 0;
+    height: 1px;
+    background: black;
+}
+.list-group-item p.complete-add .done {
+    
+    width: 102%;
+    transition: all ease .5s;
+}
+.list-group-item p.complete .done {
+
+    width: 102%;
+}
+
+/* ANIMATION ANGULAR ng-animate */
+
+/* END */
+
+.list-group-item form {
+
+    margin: 0;
+}
+
+.list-group-item p {
+
+    position: absolute;
+    left: 50px;
+}
+
+
+
+.list-group-item [type="text"] {
+
+    position: absolute;
+    left: 50px;
+    top: 10px;
+    border: none;
+    z-index: 99999;
+    width: 80%;
+}
+
+.list-group-item .badge-pill {
+
+    cursor: pointer;
+    background-color: #E53935;
+}
+
+.outro {
+
+    width: 60%;
+}
+
+.outro .signature {
+
+    opacity: .7;
+
+    font-weight: 100;
+    font-style: italic;
+
+}
