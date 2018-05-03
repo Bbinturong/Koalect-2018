@@ -7,9 +7,8 @@
     <title>Koalect</title>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js'></script>    
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.js"></script>
-    <!--link rel="stylesheet" type="text/css" href="https://meyerweb.com/eric/tools/css/reset/reset.css"-->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
@@ -303,11 +302,11 @@
 
 
                         <ul class="list-group">
-                            <li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat='el in list' >
+                            <li class="list-group-item d-flex justify-content-between align-items-center" ng-repeat='el in list'>
                                 <p ng-class='{complete: el.complete}' ng-mouseenter="showForm = true" ng-mouseleave="showForm = false">{{el.title}} <span class='done'></span></p>
                                 <form name='complete' ng-submit='editItemList($index, editItemTitle, el.complete)'>
                                     <input type="checkbox" ng-model='el.complete' ng-checked='el.complete' />
-                                    <input type='text' ng-model='editItemTitle' ng-show='showForm' ng-change='editItemList($index, editItemTitle, el.complete)' ng-value='el.title' ng-mouseenter="showForm = true" ng-mouseleave="showForm = false"/>
+                                    <input type='text' ng-model='editItemTitle' ng-show='showForm' ng-change='editItemList($index, editItemTitle, el.complete)' ng-value='el.title' ng-mouseenter="showForm = true" ng-mouseleave="showForm = false" />
                                 </form>
                                 <span class="badge badge-primary badge-pill" ng-click='removeToList($index)'>X</span>
                             </li>
@@ -449,18 +448,8 @@
     }]);       </code>
                     </pre>
                     </div>
-
-
-
-
-
-
-
-
-
-
                 </section>
-                
+
                 <section ng-controller='KoalectAngularChallengeController as ChallengeCtrl' class='row'>
 
                     <div class='exercice-info'>
@@ -470,24 +459,29 @@
                     <div class='col-6'>
                         <h2>Challenge optionnel <small>Temps approximatif : 40min</small></h2>
                         <blockquote>Créer une directive qui permette d’ouvrir et fermer une modale sur une page web. Un paramètre doit être présent dans cette directive pour indiquer le template que l’on souhaite afficher dans cette modale. </blockquote>
-                        
+
                         <form>
-                        <label>Choississez un template <span>{{template}}</span></label>
-                            
-                        <div class="form-group">
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                          <label class="btn btn-outline-info" ng-repeat='el in list' ng-class='{active:$first}'>
-                            <input type="radio" ng-model='template' name="template" id="template-{{$index}}" autocomplete="off" ng-checked='$first' ng-value="'{{el.template}}'"> {{el.title}}
-                          </label>
-                        </div>
-                        </div>
+                            <label>Choississez un template </label>
+
+                            <div class="form-group">
+                    
+                          <div ng-repeat='el in list'>
+                          <label class="btn btn-outline-info" for='template-{{$index}}'> 
+                           {{el.title}}</label>
+                            <input type="radio" ng-model='$parent.template' name="template"  ng-checked="$first" ng-value="el.template" id='template-{{$index}}'>
+                            </div>
+                            <p> {{template}} </p>
+                            </div>
                             <div class="form-group">
                                 <button ng-click='showTemplate == true ' class="btn btn-primary">Ouvrir la modale</button>
                             </div>
                         </form>
 
                     </div>
-                    
+                    <div ng-include="'_include/colorblind.html'">
+
+                    </div>
+
                     <template style='display: block !important;'>
                     </template>
 
@@ -516,18 +510,8 @@
     }]);       </code>
                     </pre>
                     </div>
-
-
-
-
-
-
-
-
-
-
                 </section>
-                
+
             </section>
             <section class='outro'>
 
@@ -535,6 +519,8 @@
                 <p>Tout d'abord d'avoir lu juqu'ici,</p>
 
                 <p>Vous pouvez me faire part de vos impressions ici : <a href='mailto:bruno.mattelet@gmail.com'>bruno.mattelet@gmail.com</a></p>
+
+                <p>Le <a href='https://github.com/Bbinturong/Koalect-2018' target='_blank'>repo Github</a></p>
 
                 <p>Les commentaires de chaque fonctions se trouvent dans le fichier <a></a>source.</p>
 

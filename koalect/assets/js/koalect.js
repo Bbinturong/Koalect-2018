@@ -104,7 +104,7 @@ app.controller('KoalectAngularChallengeController', ['$scope', function ($scope)
     $scope.list = [
         {
             title: 'Colorblind',
-            template: 'colorblind.html'
+            template: 'test1.html'
             },
         {
             title: 'Contrast',
@@ -112,22 +112,23 @@ app.controller('KoalectAngularChallengeController', ['$scope', function ($scope)
             },
         {
             title: 'Default',
-            template: 'colorblind.html'
+            template: '1565165.html'
             },
         {
             title: 'Black & White',
-            template: 'colorblind.html'
+            template: 'fqqsssqq.html'
             }
     ];
     
+    
     }]);
 
-/*app.directive('template', function () {
+app.directive('template', function () {
 
     return {
 
         restrict: 'E',
-        template: "<ng-include src='colorblind.html'> </ng-include>",
+        template: "<ng-include src='_include/colorblind.html'> </ng-include>",
         controller: function ($scope) {
             
             console.log('test');
@@ -137,7 +138,7 @@ app.controller('KoalectAngularChallengeController', ['$scope', function ($scope)
             }
         }
     };
-});*/
+});
 
 /* **************
 /* **************
