@@ -463,51 +463,52 @@
                         <form>
                             <label>Choississez un template </label>
 
-                            <div class="form-group">
-                    
-                          <div ng-repeat='el in list'>
-                          <label class="btn btn-outline-info" for='template-{{$index}}'> 
-                           {{el.title}}</label>
-                            <input type="radio" ng-model='$parent.template' name="template"  ng-checked="$first" ng-value="el.template" id='template-{{$index}}'>
+                            <div class="form-group" >
+                            <div class="btn-group btn-group-toggle">
+                          <label class="btn btn-outline-info" for='template-{{$index}}' ng-repeat='el in list'> 
+                           {{el.title}}
+                            <input type="radio" ng-model='$parent.template' name="template" ng-value="el.template" id='template-{{$index}}' class='modale-btn'></label>  
+                                </div>
                             </div>
-                            <p> {{template}} </p>
-                            </div>
+                            
                             <div class="form-group">
-                                <button ng-click='showTemplate == true ' class="btn btn-primary">Ouvrir la modale</button>
+                                <button ng-click='showTemplate = !showTemplate' class="btn btn-primary">Ouvrir la modale</button>
                             </div>
                         </form>
-
-                    </div>
-                    <div ng-include="'_include/colorblind.html'">
-
                     </div>
 
-                    <template style='display: block !important;'>
-                    </template>
+                    <template-modale ng-show='showTemplate'></template-modale>
 
                     <div class='col'>
                         <pre>
                     <code class='language-javascript'>
-    var app = angular.module('koalectAngular', []);
-      app.controller('KoalectAngularFormulaireController', ['$scope', function($scope) {
-
-        $scope.formSent = false;
-        $scope.phoneNumber = false;
-
-        $scope.sendForm = function(phone) {
+app.controller('KoalectAngularChallengeController', ['$scope', function ($scope) { 
+    $scope.list = [...];
     
-            $scope.formSent = true; 
-                
-            if (isFinite(Number(phone))){
-                $scope.phoneNumber = true;
-                
-            } else {
-                $scope.phoneNumber = false;
-            }
+    $scope.template = 'default.html';
+    
+    $scope.includeTemplate = function(template){
+        
+        return '_include/' + template + '';
+    }
 
-        };
+    }]);
 
-    }]);       </code>
+app.directive('templateModale', function () {
+
+    return {
+
+        restrict: 'E',
+        templateUrl: "_include/template.html",
+        controller: function ($scope) {
+
+            $scope.getTemplate = function () {
+
+                return "_include/" + $scope.template;
+            };
+        }
+    };
+});       </code>
                     </pre>
                     </div>
                 </section>
