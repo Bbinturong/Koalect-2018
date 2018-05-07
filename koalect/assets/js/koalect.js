@@ -103,41 +103,43 @@ app.controller('KoalectAngularChallengeController', ['$scope', function ($scope)
     // car le formulaire n'est pas encore envoyé
     $scope.list = [
         {
-            title: 'Colorblind',
-            template: 'colorblind.html'
-            },
-        {
-            title: 'Contrast',
-            template: 'colorblind.html'
-            },
-        {
             title: 'Default',
-            template: 'colorblind.html'
+            template: 'default.html'
             },
         {
-            title: 'Black & White',
-            template: 'colorblind.html'
+            title: 'Montagne',
+            template: 'mountain.html'
+            },
+        {
+            title: 'Neige',
+            template: 'snow.html'
             }
     ];
     
+    $scope.template = 'default.html';
+    
+    $scope.includeTemplate = function(template){
+        
+        return '_include/' + template + '';
+    }
+
     }]);
 
-/*app.directive('template', function () {
+app.directive('templateModale', function () {
 
     return {
 
         restrict: 'E',
-        template: "<ng-include src='colorblind.html'> </ng-include>",
+        templateUrl: "_include/template.html",
         controller: function ($scope) {
-            
-            console.log('test');
+
             $scope.getTemplate = function () {
 
-                console.log();
-            }
+                return "_include/" + $scope.template;
+            };
         }
     };
-});*/
+});
 
 /* **************
 /* **************
@@ -249,6 +251,16 @@ $(document).ready(function () {
     $('#koalect-js-btn-3').click(function () {
         checkSameNumbers();
     });
+    
+    function initBtn(){
+        
+        $(".modale-btn").parent().removeClass('active');
+        $(".modale-btn:checked").parent().addClass('active');
+    }    
+    initBtn();
+    
+    $('.modale-btn').parent().click(initBtn);
+    
 
 
 })
